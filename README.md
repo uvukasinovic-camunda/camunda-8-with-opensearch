@@ -1,8 +1,8 @@
 # Camunda 8 Deployment and Backup with OpenSearch
 
-The purpose of this document is to show how to integrate OpenSearch with Camunda 8 and enable backups.
+The purpose of this document is to show how to integrate OpenSearch with Camunda 8 on EKS and enable backups.
 
-## Create and Verify Camunda 8 on EKS
+## Create and Verify Camunda 8 on EKS (skip if it is not needed)
 
 ### Create an EKS Cluster with Terraform
 Follow the guide:
@@ -117,8 +117,8 @@ python3 register_repo.py
 ### Verify in OpenSearch Dashboard
 Go to the OpenSearch [dashboard](http://localhost:9200/_dashboards) and check if the repository is created.
 
-## Configure Operate, Tasklist, and Optimize for Backup
-### Update `generated-values.yml` with OpenSaerch repository name. Follow the guides:
+## Configure Backup using OpenSearch
+### Update `generated-values.yml` with OpenSearch repository name. Follow the guides:
 - [Operate & Tasklist Backup Prerequisites](https://docs.camunda.io/docs/self-managed/operational-guides/backup-restore/operate-tasklist-backup/#prerequisites)
 - [Optimize Backup Prerequisites](https://docs.camunda.io/docs/self-managed/operational-guides/backup-restore/optimize-backup/#prerequisites)
 
