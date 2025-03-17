@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: opensearch-proxy
+spec:
+  restartPolicy: Always
+  containers:
+  - name: opensearch-proxy
+    image: nginx:alpine  # Lightweight nginx image
+    ports:
+      - containerPort: 80  # Expose port 80 to interact with the pod externally
+    volumeMounts:
+      - name: nginx-conf
+        mountPath: /etc/nginx/conf.d  # Mount the nginx config
+  volumes:
+    - name: nginx-conf
+      configMap:
+        name: nginx-opensearch-proxy-config  # Use the nginx config from the ConfigMap
