@@ -1,5 +1,7 @@
 # Camunda 8 Deployment and Backup with OpenSearch
 
+The purpose of this document is to show how to integrate OpenSearch with Camunda 8 and enable backups.
+
 ## Create and Verify Camunda 8 on EKS
 
 ### Create an EKS Cluster with Terraform
